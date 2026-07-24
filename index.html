@@ -3,9 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="theme-color" content="#08090c">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="300M">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwSDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+QHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yQSIjNGY4ZmY3Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yQSIjMjJjNThhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkZGg9IjE4MCIgaGVpZ2h0QSIxODAiIHJ4QSI0MCIgZmlsRD0iSzA4MDkwYyIvTjx0ZXh0IGg5SWkwIiB5RTMxTTgiIGZvblQtZmFtaWx5RTN6eXN0ZW0tdWksc2Fucy1zZXJpZmIgZm9udC1zaXplRTg0MCIgWm91dC13ZWlnaHRRSWpqM008L3RleHP+PC9zdmc+">
 <title>Projeto 300M</title>
 <style>
   :root{color-scheme:dark;--plane:#08090c;--surface:#12141b;--surface-hi:#181b24;--stroke:rgba(255,255,255,0.07);--ink:#f4f5f7;--ink-2:#a7abb6;--muted:#6c7080;--blue:#4f8ff7;--blue-hi:#7db0ff;--aqua:#22c58a;--aqua-hi:#5ee3b3;--orange:#f97a4d;--good:#22c58a;--warn:#f5b53c;--crit:#f2544f;--track:#20232d;}
@@ -19,9 +24,7 @@
   .head .date{font-size:11px;color:var(--muted);text-align:right;line-height:1.4;}
   .sub{font-size:12.5px;color:var(--ink-2);margin:12px 2px 22px;letter-spacing:0.1px;}
   .section-label{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin:26px 4px 12px;}
-  .card{position:relative;background:linear-gradient(180deg,var(--surface-hi),var(--surface));border:1px solid var(--stroke);border-radius:20px;padding:18px;margin-bottom:13px;box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.35);overflow:hidden;opacity:0;transform:translateY(10px);animation:rise .5s cubic-bezier(.2,.7,.2,1) forwards;}
-  @keyframes rise{to{opacity:1;transform:none;}}
-  .card:nth-child(1){animation-delay:.02s}.grid2 .card:nth-child(1){animation-delay:.05s}.grid2 .card:nth-child(2){animation-delay:.09s}
+  .card{position:relative;background:linear-gradient(180deg,var(--surface-hi),var(--surface));border:1px solid var(--stroke);border-radius:20px;padding:18px;margin-bottom:13px;box-shadow:0 1px 0 rgba(255,255,255,0.04) inset, 0 8px 24px rgba(0,0,0,0.35);overflow:hidden;}
   .hero{padding:20px 18px 18px;}
   .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 0% 0%, rgba(79,143,247,0.16), transparent 55%);pointer-events:none;}
   .hero .row{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;}
@@ -37,34 +40,27 @@
   .hero .chip{font-size:11px;color:var(--ink-2);}
   .hero .chip b{color:var(--ink);font-weight:700;}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
   .kpi .k-label{font-size:11px;color:var(--muted);font-weight:650;letter-spacing:0.3px;margin-bottom:10px;line-height:1.25;min-height:26px;}
+  .kpi.mini .k-label{min-height:auto;margin-bottom:8px;}
   .kpi .k-val{font-size:25px;font-weight:800;letter-spacing:-0.6px;line-height:1;}
+  .kpi.mini .k-val{font-size:27px;}
   .kpi .k-val small{font-size:13px;color:var(--muted);font-weight:600;}
   .kpi .k-delta{font-size:11px;font-weight:700;margin-top:9px;display:flex;align-items:center;gap:5px;letter-spacing:0.2px;}
+  .kpi.mini .k-sub{font-size:10px;color:var(--muted);margin-top:6px;font-weight:600;letter-spacing:0.2px;}
   .up{color:var(--good);}.down{color:var(--crit);}.flat{color:var(--muted);}
   .mini-track{height:6px;background:var(--track);border-radius:99px;overflow:hidden;margin-top:11px;}
-  .mini-fill{height:100%;border-radius:99px;transform-origin:left;animation:grow .7s .2s cubic-bezier(.2,.7,.2,1) both;}
-  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .mini-fill{height:100%;border-radius:99px;}
   .meet-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;}
   .meet-total{font-size:27px;font-weight:800;letter-spacing:-0.6px;}
   .meet-total small{font-size:13px;color:var(--muted);font-weight:600;}
   .meet-cap{font-size:11px;color:var(--muted);}
   .segbar{display:flex;height:38px;border-radius:11px;overflow:hidden;gap:3px;background:transparent;}
-  .seg{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#06121a;min-width:38px;transform-origin:left;animation:grow .6s .25s cubic-bezier(.2,.7,.2,1) both;}
+  .seg{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#06121a;min-width:38px;}
   .stack-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;}
   .lg{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-2);font-weight:550;}
   .lg b{color:var(--ink);}
   .dot{width:9px;height:9px;border-radius:3px;flex:none;}
-  .beh-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--stroke);}
-  .beh-row:first-child{padding-top:2px;}.beh-row:last-child{border-bottom:none;padding-bottom:2px;}
-  .beh-name{font-size:13.5px;color:var(--ink-2);font-weight:600;}
-  .beh-right{display:flex;align-items:center;gap:11px;}
-  .beh-val{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-0.3px;}
-  .beh-val i{color:var(--muted);font-weight:600;font-style:normal;font-size:12px;}
-  .badge{font-size:10px;font-weight:800;padding:4px 10px;border-radius:99px;letter-spacing:0.4px;text-transform:uppercase;}
-  .b-ok{background:rgba(34,197,138,0.15);color:var(--good);}
-  .b-warn{background:rgba(245,181,60,0.15);color:var(--warn);}
-  .b-low{background:rgba(242,84,79,0.15);color:var(--crit);}
   .foot-note{font-size:11px;color:var(--muted);text-align:center;margin-top:24px;line-height:1.6;letter-spacing:0.2px;}
   .foot-note b{color:var(--ink-2);font-weight:700;}
 </style>
@@ -72,19 +68,18 @@
 <body>
   <div class="head">
     <div class="brand"><div class="mark">3M</div><h1>Projeto 300M</h1></div>
-    <div class="date">jul/2026<br>atualizado hoje</div>
+    <div class="date">jul/2026<br>atualizado agora</div>
   </div>
   <div class="sub">Rumo a R$ 30M em 12 meses · R$ 100 mil/mês em 5 anos</div>
 
+  <div class="section-label">Patrimônio &amp; Receita</div>
   <div class="card hero">
     <div class="row">
       <div class="ring-wrap">
         <svg width="96" height="96" viewBox="0 0 96 96">
           <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4f8ff7"/><stop offset="1" stop-color="#22c58a"/></linearGradient></defs>
           <circle cx="48" cy="48" r="40" fill="none" stroke="#20232d" stroke-width="9"/>
-          <circle cx="48" cy="48" r="40" fill="none" stroke="url(#g1)" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="50.3" transform="rotate(-90 48 48)">
-            <animate attributeName="stroke-dashoffset" from="251.3" to="50.3" dur="1s" begin="0.2s" fill="freeze" calcMode="spline" keySplines="0.2 0.7 0.2 1" keyTimes="0;1"/>
-          </circle>
+          <circle cx="48" cy="48" r="40" fill="none" stroke="url(#g1)" stroke-width="9" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="50.3" transform="rotate(-90 48 48)"/>
         </svg>
         <div class="pct"><b>80%</b><span>da meta</span></div>
       </div>
@@ -108,51 +103,47 @@
     </div>
     <div class="card kpi">
       <div class="k-label">Faturamento líquido<br>no mês</div>
-      <div class="k-val">R$ 38,2k</div>
+      <div class="k-val">R$ 18,1k</div>
       <div class="mini-track"><div class="mini-fill" style="width:78%;background:linear-gradient(90deg,var(--aqua),var(--aqua-hi))"></div></div>
-      <div class="k-delta flat">no mês</div>
+      <div class="k-delta up">▲ 79% vs mês anterior</div>
     </div>
   </div>
 
-  <div class="grid2">
-    <div class="card kpi">
-      <div class="k-label">Clientes novos<br>no trimestre</div>
-      <div class="k-val">0 <small>/5</small></div>
-      <div class="mini-track"><div class="mini-fill" style="width:0%;background:linear-gradient(90deg,var(--aqua),var(--aqua-hi))"></div></div>
-      <div class="k-delta flat">meta trimestral</div>
+  <div class="section-label">Funil de captação</div>
+  <div class="grid3">
+    <div class="card kpi mini">
+      <div class="k-label">Negócios em<br>andamento</div>
+      <div class="k-val">20</div>
+      <div class="k-sub">oportunidades ativas</div>
     </div>
-    <div class="card kpi">
-      <div class="k-label">Retenção de<br>clientes</div>
-      <div class="k-val">100%</div>
-      <div class="mini-track"><div class="mini-fill" style="width:100%;background:linear-gradient(90deg,var(--aqua),var(--aqua-hi))"></div></div>
-      <div class="k-delta up">▲ mantidos</div>
+    <div class="card kpi mini">
+      <div class="k-label">Leads no<br>funil</div>
+      <div class="k-val">14</div>
+      <div class="k-sub">prospecção + reuniões</div>
+    </div>
+    <div class="card kpi mini">
+      <div class="k-label">Contas<br>abertas</div>
+      <div class="k-val">0</div>
+      <div class="k-sub">no período</div>
     </div>
   </div>
 
-  <div class="section-label">Reuniões realizadas · mês</div>
+  <div class="section-label">Reuniões da semana</div>
   <div class="card">
     <div class="meet-head">
-      <div class="meet-total">0 <small>reuniões</small></div>
+      <div class="meet-total">2 <small>reuniões</small></div>
       <div class="meet-cap">por tipo de contato</div>
     </div>
     <div class="segbar">
-      <div class="seg" style="background:linear-gradient(135deg,var(--blue),var(--blue-hi));flex:0.001">0</div>
-      <div class="seg" style="background:linear-gradient(135deg,var(--orange),#ff9b6f);flex:0.001">0</div>
+      <div class="seg" style="background:linear-gradient(135deg,var(--blue),var(--blue-hi));flex:1">1</div>
+      <div class="seg" style="background:linear-gradient(135deg,var(--orange),#ff9b6f);flex:1">1</div>
     </div>
     <div class="stack-legend">
-      <span class="lg"><span class="dot" style="background:var(--blue)"></span>Clientes · <b>0</b></span>
-      <span class="lg"><span class="dot" style="background:var(--orange)"></span>Leads novos · <b>0</b></span>
+      <span class="lg"><span class="dot" style="background:var(--blue)"></span>Clientes · <b>1</b></span>
+      <span class="lg"><span class="dot" style="background:var(--orange)"></span>Leads · <b>1</b></span>
     </div>
   </div>
 
-  <div class="section-label">Comportamento · você controla 100%</div>
-  <div class="card">
-    <div class="beh-row"><span class="beh-name">Encontros presenciais / semana</span><div class="beh-right"><span class="beh-val">2 <i>/ 3</i></span><span class="badge b-warn">no ritmo</span></div></div>
-    <div class="beh-row"><span class="beh-name">Pedidos de indicação / mês</span><div class="beh-right"><span class="beh-val">4 <i>/ 5</i></span><span class="badge b-warn">no ritmo</span></div></div>
-    <div class="beh-row"><span class="beh-name">Conversas de relacionamento / mês</span><div class="beh-right"><span class="beh-val">11 <i>/ 10</i></span><span class="badge b-ok">bateu</span></div></div>
-    <div class="beh-row"><span class="beh-name">Apresentações recebidas / trim.</span><div class="beh-right"><span class="beh-val">0 <i>/ 15</i></span><span class="badge b-low">atrás</span></div></div>
-  </div>
-
-  <div class="foot-note">O mês se avalia primeiro pelo <b>comportamento</b>.<br>Resultado oscila; consistência faz a média convergir.</div>
+  <div class="foot-note">Patrimônio e captação você controla.<br>O funil se enche na consistência.</div>
 </body>
 </html>
