@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="300M">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwSDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+QHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yQSIjNGY4ZmY3Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yQSIjMjJjNThhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkZGg9IjE4MCIgaGVpZ2h0QSIxODAiIHJ4QSI0MCIgZmlsRD0iSzA4MDkwYyIvTjx0ZXh0IGg5SWkwIiB5RTMxTTgiIGZvblQtZmFtaWx5RTN6eXN0ZW0tdWksc2Fucy1zZXJpZmIgZm9udC1zaXplRTg0MCIgWm91dC13ZWlnaHRRSWpqM008L3RleHP+PC9zdmc+">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODAiIGhlaWdodD0iMTgwIiB2aWV3Qm94PSIwIDAgMTgwIDE4MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNGY4ZmY3Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMjJjNThhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0iIzA4MDkwYyIvPjx0ZXh0IHg9IjkwIiB5PSIxMTgiIGZvbnQtZmFtaWx5PSJzeXN0ZW0tdWksc2Fucy1zZXJpZiIgZm9udC1zaXplPSI4MCIgZm9udC13ZWlnaHQ9IjgwMCIgZmlsbD0idXJsKCNnKSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+M008L3RleHQ+PC9zdmc+">
 <title>Projeto 300M</title>
 <style>
   :root{color-scheme:dark;--plane:#08090c;--surface:#12141b;--surface-hi:#181b24;--stroke:rgba(255,255,255,0.07);--ink:#f4f5f7;--ink-2:#a7abb6;--muted:#6c7080;--blue:#4f8ff7;--blue-hi:#7db0ff;--aqua:#22c58a;--aqua-hi:#5ee3b3;--orange:#f97a4d;--good:#22c58a;--warn:#f5b53c;--crit:#f2544f;--track:#20232d;}
@@ -63,14 +63,32 @@
   .dot{width:9px;height:9px;border-radius:3px;flex:none;}
   .foot-note{font-size:11px;color:var(--muted);text-align:center;margin-top:24px;line-height:1.6;letter-spacing:0.2px;}
   .foot-note b{color:var(--ink-2);font-weight:700;}
+  .ritmo-chip{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--ink-2);background:rgba(79,143,247,0.1);border:1px solid rgba(79,143,247,0.2);padding:5px 10px;border-radius:99px;margin-top:12px;}
+  .ritmo-chip b{color:var(--blue-hi);font-weight:750;}
+  .per-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
+  .per{background:linear-gradient(180deg,var(--surface-hi),var(--surface));border:1px solid var(--stroke);border-radius:16px;padding:14px 13px;}
+  .per .per-lbl{font-size:10px;color:var(--muted);font-weight:650;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:8px;}
+  .per .per-val{font-size:19px;font-weight:800;letter-spacing:-0.5px;line-height:1;}
+  .per .per-sub{font-size:9.5px;color:var(--muted);margin-top:5px;font-weight:600;}
+  .bars{display:flex;align-items:flex-end;gap:7px;height:96px;padding:4px 2px 0;}
+  .bar-col{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end;gap:7px;}
+  .bar-wrap{width:100%;height:100%;display:flex;align-items:flex-end;}
+  .bar{width:100%;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,var(--aqua-hi),var(--aqua));min-height:3px;}
+  .bar-col:last-child .bar{background:linear-gradient(180deg,var(--blue-hi),var(--blue));}
+  .bar-lbl{font-size:10px;color:var(--muted);font-weight:650;}
+  .deal{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--stroke);}
+  .deal:last-child{border-bottom:none;}
+  .deal-rank{width:22px;height:22px;border-radius:7px;background:rgba(79,143,247,0.14);color:var(--blue-hi);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;}
+  .deal-nome{flex:1;min-width:0;font-size:13px;color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .deal-val{font-size:14px;font-weight:800;color:var(--aqua-hi);letter-spacing:-0.3px;flex:none;}
 </style>
 </head>
 <body>
   <div class="head">
     <div class="brand"><div class="mark">3M</div><h1>Projeto 300M</h1></div>
-    <div class="date">jul/2026<br>atualizado agora</div>
+    <div class="date">jul/2026<br>atualizado 08h10</div>
   </div>
-  <div class="sub">Rumo a R$ 30M em 12 meses · R$ 100 mil/mês em 5 anos</div>
+  <div class="sub">Bom dia, Wes. Rumo a R$ 30M em 12 meses · R$ 100 mil/mês em 5 anos</div>
 
   <div class="section-label">Patrimônio &amp; Receita</div>
   <div class="card hero">
@@ -88,8 +106,9 @@
         <div class="val">R$ 24,0M <small>/ 30M</small></div>
         <div class="meta">
           <span class="chip">Faltam <b>R$ 6,0M</b></span>
-          <span class="chip">Ritmo <b>~1,4M/mês</b></span>
+          <span class="chip">Meta capt <b>~1,4M/mês</b></span>
         </div>
+        <div class="ritmo-chip">Pra bater 30M no prazo: captar <b>R$ 1,2M/mês</b></div>
       </div>
     </div>
   </div>
@@ -97,7 +116,7 @@
   <div class="grid2">
     <div class="card kpi">
       <div class="k-label">Captação no mês</div>
-      <div class="k-val">R$ 0,1M <small>/1,4M</small></div>
+      <div class="k-val">R$ 150k <small>/1,4M</small></div>
       <div class="mini-track"><div class="mini-fill" style="width:11%;background:linear-gradient(90deg,var(--blue),var(--blue-hi))"></div></div>
       <div class="k-delta up">▲ 11% da meta</div>
     </div>
@@ -143,6 +162,23 @@
       <span class="lg"><span class="dot" style="background:var(--orange)"></span>Leads · <b>1</b></span>
     </div>
   </div>
+
+  <div class="section-label">Faturamento no ano</div>
+  <div class="per-grid">
+    <div class="per"><div class="per-lbl">Trimestre</div><div class="per-val">R$ 18k</div><div class="per-sub">3º tri</div></div>
+    <div class="per"><div class="per-lbl">Semestre</div><div class="per-val">R$ 18k</div><div class="per-sub">2º semestre</div></div>
+    <div class="per"><div class="per-lbl">Ano</div><div class="per-val">R$ 45k</div><div class="per-sub">acum 2026</div></div>
+  </div>
+  <div class="card">
+    <div class="meet-head">
+      <div class="meet-total">R$ 45k <small>no ano</small></div>
+      <div class="meet-cap">faturamento mês a mês</div>
+    </div>
+    <div class="bars"><div class="bar-col"><div class="bar-wrap"><div class="bar" style="height:17%"></div></div><div class="bar-lbl">M</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar" style="height:22%"></div></div><div class="bar-lbl">A</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar" style="height:56%"></div></div><div class="bar-lbl">M</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar" style="height:56%"></div></div><div class="bar-lbl">J</div></div><div class="bar-col"><div class="bar-wrap"><div class="bar" style="height:100%"></div></div><div class="bar-lbl">J</div></div></div>
+  </div>
+
+  <div class="section-label">Maiores negócios em andamento</div>
+  <div class="card"><div class="deal"><div class="deal-rank">1</div><div class="deal-nome">Sucessão Patrimonial - An…</div><div class="deal-val">R$ 13,0M</div></div><div class="deal"><div class="deal-rank">2</div><div class="deal-nome">Cross-sell Investimentos …</div><div class="deal-val">R$ 6,0M</div></div><div class="deal"><div class="deal-rank">3</div><div class="deal-nome">Consórcio Construção ~R$2…</div><div class="deal-val">R$ 2,0M</div></div></div>
 
   <div class="foot-note">Patrimônio e captação você controla.<br>O funil se enche na consistência.</div>
 </body>
