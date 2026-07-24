@@ -16,8 +16,8 @@
   :root{color-scheme:dark;--plane:#08090c;--surface:#12141b;--surface-hi:#181b24;--stroke:rgba(255,255,255,0.07);--ink:#f4f5f7;--ink-2:#a7abb6;--muted:#6c7080;--blue:#4f8ff7;--blue-hi:#7db0ff;--aqua:#22c58a;--aqua-hi:#5ee3b3;--orange:#f97a4d;--good:#22c58a;--warn:#f5b53c;--crit:#f2544f;--track:#20232d;}
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html,body{background:var(--plane);}
-  body{color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;padding:22px 16px calc(40px + env(safe-area-inset-bottom));max-width:540px;margin:0 auto;-webkit-font-smoothing:antialiased;background:radial-gradient(120% 60% at 50% -10%, rgba(79,143,247,0.14), transparent 60%),radial-gradient(90% 50% at 90% 8%, rgba(34,197,138,0.08), transparent 55%),var(--plane);min-height:100vh;}
-  .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;}
+  body{color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;padding:calc(20px + env(safe-area-inset-top)) 16px calc(40px + env(safe-area-inset-bottom));max-width:540px;margin:0 auto;-webkit-font-smoothing:antialiased;background:radial-gradient(120% 60% at 50% -10%, rgba(79,143,247,0.14), transparent 60%),radial-gradient(90% 50% at 90% 8%, rgba(34,197,138,0.08), transparent 55%),var(--plane);min-height:100vh;}
+  .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;gap:12px;}
   .brand{display:flex;align-items:center;gap:10px;}
   .brand .mark{width:34px;height:34px;border-radius:10px;flex:none;background:linear-gradient(135deg,var(--blue),var(--aqua));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#06121a;box-shadow:0 4px 18px rgba(79,143,247,0.35);}
   .brand h1{font-size:20px;font-weight:750;letter-spacing:-0.4px;}
@@ -36,8 +36,8 @@
   .hero .info .lbl{font-size:11px;color:var(--ink-2);font-weight:600;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:8px;}
   .hero .info .val{font-size:33px;font-weight:800;letter-spacing:-1px;line-height:0.95;}
   .hero .info .val small{font-size:15px;color:var(--muted);font-weight:600;letter-spacing:0;}
-  .hero .info .meta{display:flex;gap:14px;margin-top:12px;}
-  .hero .chip{font-size:11px;color:var(--ink-2);}
+  .hero .info .meta{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap;}
+  .hero .chip{font-size:11px;color:var(--ink-2);white-space:nowrap;}
   .hero .chip b{color:var(--ink);font-weight:700;}
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
   .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
@@ -63,10 +63,10 @@
   .dot{width:9px;height:9px;border-radius:3px;flex:none;}
   .foot-note{font-size:11px;color:var(--muted);text-align:center;margin-top:24px;line-height:1.6;letter-spacing:0.2px;}
   .foot-note b{color:var(--ink-2);font-weight:700;}
-  .ritmo-chip{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;color:var(--ink-2);background:rgba(79,143,247,0.1);border:1px solid rgba(79,143,247,0.2);padding:5px 10px;border-radius:99px;margin-top:12px;}
-  .ritmo-chip b{color:var(--blue-hi);font-weight:750;}
-  .per-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
-  .per{background:linear-gradient(180deg,var(--surface-hi),var(--surface));border:1px solid var(--stroke);border-radius:16px;padding:14px 13px;}
+  .ritmo-chip{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink-2);background:rgba(79,143,247,0.1);border:1px solid rgba(79,143,247,0.2);padding:8px 13px;border-radius:14px;margin-top:14px;line-height:1.3;}
+  .ritmo-chip b{color:var(--blue-hi);font-weight:750;white-space:nowrap;}
+  .per-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:13px;}
+  .per{background:linear-gradient(180deg,var(--surface-hi),var(--surface));border:1px solid var(--stroke);border-radius:16px;padding:15px 12px;}
   .per .per-lbl{font-size:10px;color:var(--muted);font-weight:650;letter-spacing:0.4px;text-transform:uppercase;margin-bottom:8px;}
   .per .per-val{font-size:19px;font-weight:800;letter-spacing:-0.5px;line-height:1;}
   .per .per-sub{font-size:9.5px;color:var(--muted);margin-top:5px;font-weight:600;}
@@ -86,7 +86,7 @@
 <body>
   <div class="head">
     <div class="brand"><div class="mark">3M</div><h1>Projeto 300M</h1></div>
-    <div class="date">jul/2026<br>atualizado 08h13</div>
+    <div class="date">jul/2026<br>atualizado 08h45</div>
   </div>
   <div class="sub">Bom dia, Wes. Rumo a R$ 30M em 12 meses · R$ 100 mil/mês em 5 anos</div>
 
