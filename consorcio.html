@@ -8,25 +8,30 @@
   :root{
     --bg:#0b0e14; --card:#131824; --card2:#1a2132; --line:#232c42;
     --txt:#e8ecf4; --mut:#8b95ab; --gold:#e8b34b; --green:#3ddc84;
-    --yellow:#f5c542; --orange:#f28c3b; --red:#e05d5d; --blue:#5b8def; --purple:#a06ee8;
+    --yellow:#f5c542; --orange:#f28c3b; --red:#e05d5d; --blue:#5b8def;
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;padding:20px 16px 40px;max-width:520px;margin:0 auto}
   .head{text-align:center;margin-bottom:20px}
   .head h1{font-size:20px;font-weight:800;letter-spacing:.5px}
   .head .sub{color:var(--mut);font-size:12px;margin-top:4px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+  .card{position:relative;background:linear-gradient(180deg,#161c2b,var(--card));border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:13px;box-shadow:0 8px 24px rgba(0,0,0,.35);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 0% 0%, rgba(232,179,75,.10), transparent 55%);pointer-events:none}
   .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px;font-weight:700}
+  .tap{cursor:pointer;transition:transform .08s ease,opacity .08s ease}
+  .tap:active{transform:scale(.97);opacity:.8}
+  .arr{position:absolute;top:16px;right:16px;color:var(--mut);font-size:14px}
   .ringwrap{display:flex;align-items:center;gap:18px}
-  .ring{position:relative;width:130px;height:130px;flex-shrink:0}
+  .ring{position:relative;width:110px;height:110px;flex-shrink:0}
   .ring svg{transform:rotate(-90deg)}
   .ring .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-  .ring .pct b{font-size:26px;color:var(--gold)}
-  .ring .pct span{font-size:10px;color:var(--mut)}
-  .bignum{font-size:22px;font-weight:800}
+  .ring .pct b{font-size:23px;color:var(--gold)}
+  .ring .pct span{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:1px}
+  .bignum{font-size:24px;font-weight:800}
   .bignum small{font-size:13px;color:var(--mut);font-weight:500}
-  .kv{margin-top:8px;font-size:13px;color:var(--mut)}
-  .kv b{color:var(--txt)}
+  .chips{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap}
+  .chip{font-size:11.5px;color:var(--mut)}
+  .chip b{color:var(--txt)}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .mini{background:var(--card2);border-radius:12px;padding:12px}
   .mini .v{font-size:18px;font-weight:800}
@@ -36,18 +41,29 @@
   .fstep{flex:1;text-align:center;background:var(--card2);border-radius:10px;padding:10px 4px}
   .fstep .n{font-size:20px;font-weight:800}
   .fstep .t{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-  .lead{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .lead{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
   .lead:last-child{border-bottom:none}
   .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
   .lead .info{flex:1;min-width:0}
   .lead .nm{font-size:14px;font-weight:700}
   .lead .cm{font-size:11.5px;color:var(--mut);margin-top:1px;line-height:1.35}
   .lead .vl{font-size:13px;font-weight:700;white-space:nowrap;color:var(--gold)}
-  .sub2{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin:14px 0 4px}
-  .sub2:first-of-type{margin-top:0}
+  .lead.done .nm,.lead.done .vl{text-decoration:line-through;opacity:.5}
   .bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:10px}
   .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f5d47a)}
+  .vermais{display:block;width:100%;text-align:center;background:var(--card2);border:none;color:var(--mut);font-size:12px;font-weight:700;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;font-family:inherit}
+  .vermais:active{opacity:.7}
+  .rowbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .rowbtn{background:var(--card2);border-radius:12px;padding:13px 12px;text-align:center}
+  .rowbtn .n{font-size:17px;font-weight:800}
+  .rowbtn .t{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
   .foot{text-align:center;color:var(--mut);font-size:10.5px;margin-top:18px}
+  /* páginas deslizantes */
+  .page{position:fixed;inset:0;background:var(--bg);z-index:200;overflow-y:auto;padding:16px 16px 40px;transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);visibility:hidden;max-width:520px;margin:0 auto}
+  .page.open{transform:translateX(0);visibility:visible}
+  .page-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+  .page-back{background:var(--card2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:8px 14px;font-size:14px;cursor:pointer;font-family:inherit}
+  .page-title{font-size:16px;font-weight:800}
 </style>
 </head>
 <body>
@@ -57,51 +73,46 @@
   <div class="sub">Agosto 2026 · Meta pessoal Wesley</div>
 </div>
 
-<div class="card">
+<!-- HERO -->
+<div class="card hero tap" data-page="ritmo">
+  <span class="arr">›</span>
   <div class="lbl">Progresso da meta</div>
   <div class="ringwrap">
     <div class="ring">
-      <svg width="130" height="130" viewBox="0 0 130 130">
-        <circle cx="65" cy="65" r="56" fill="none" stroke="#232c42" stroke-width="12"/>
-        <circle cx="65" cy="65" r="56" fill="none" stroke="#e8b34b" stroke-width="12"
-          stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9"/>
+      <svg width="110" height="110" viewBox="0 0 110 110">
+        <circle cx="55" cy="55" r="47" fill="none" stroke="#232c42" stroke-width="10"/>
+        <circle cx="55" cy="55" r="47" fill="none" stroke="#e8b34b" stroke-width="10"
+          stroke-linecap="round" stroke-dasharray="295.3" stroke-dashoffset="295.3"/>
       </svg>
       <div class="pct"><b>0%</b><span>da meta</span></div>
     </div>
     <div>
       <div class="bignum">R$ 0 <small>/ R$ 8M</small></div>
-      <div class="kv">Cotas fechadas: <b>0 / 16</b></div>
-      <div class="kv">Falta: <b>R$ 8.000.000</b></div>
+      <div class="chips">
+        <span class="chip">Cotas <b>0/16</b></span>
+        <span class="chip">Falta <b>R$ 8M</b></span>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="card">
-  <div class="lbl">Ritmo necessário</div>
-  <div class="grid">
-    <div class="mini"><div class="v gold">R$ 2M</div><div class="k">por semana</div></div>
-    <div class="mini"><div class="v gold">4 cotas</div><div class="k">por semana (500k)</div></div>
-    <div class="mini"><div class="v">21</div><div class="k">dias úteis restantes</div></div>
-    <div class="mini"><div class="v">R$ 381k</div><div class="k">por dia útil</div></div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="lbl">Funil da campanha</div>
+<!-- FUNIL -->
+<div class="card tap" data-page="propostas">
+  <span class="arr">›</span>
+  <div class="lbl">Funil · 35 nomes</div>
   <div class="fun">
     <div class="fstep"><div class="n">32</div><div class="t">A contatar</div></div>
     <div class="fstep"><div class="n" style="color:var(--yellow)">0</div><div class="t">Conversando</div></div>
     <div class="fstep"><div class="n" style="color:var(--orange)">3</div><div class="t">Proposta</div></div>
     <div class="fstep"><div class="n" style="color:var(--green)">0</div><div class="t">Fechado</div></div>
   </div>
-  <div class="kv" style="margin-top:12px">Propostas em jogo: <b>R$ 3,6M</b> (45% da meta)</div>
+  <div class="chip" style="margin-top:12px;display:block">Propostas em jogo: <b>R$ 3,6M</b> (45% da meta)</div>
   <div class="bar"><i style="width:45%"></i></div>
 </div>
 
+<!-- PROPOSTAS (resumo, 3 itens) -->
 <div class="card">
-  <div class="lbl">Lista da campanha · 35 nomes</div>
-
-  <div class="sub2">Propostas em andamento</div>
+  <div class="lbl">Propostas em andamento</div>
   <div class="lead"><div class="dot" style="background:var(--orange)"></div>
     <div class="info"><div class="nm">Silvio</div></div><div class="vl">R$ 2,5M</div></div>
   <div class="lead"><div class="dot" style="background:var(--orange)"></div>
@@ -109,45 +120,126 @@
   <div class="lead"><div class="dot" style="background:var(--orange)"></div>
     <div class="info"><div class="nm">Guilherme Garcia</div></div><div class="vl">R$ 100k</div></div>
 
-  <div class="sub2">Leads · 21</div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Lucas Lopes</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Cardoso</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Igor Tennis</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Andre Marinho</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eduard Graber</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Natan Qualisolda</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Will Gustavo</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ulrich Tennis</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rodrigo Tennis</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Patrícia Martins</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Rodrigues</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ricardo Nascimento</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Dr Andres</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Raul Tennis</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Cintia Rosa</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Phillipe Fujisawa</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Branco</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Guillermo Fernandez</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eiki Piloto</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">João Gaspar</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Alexandre Biazi</div></div></div>
-
-  <div class="sub2">Clientes · 11</div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Família Marçola</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel GPG</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diogo Flores</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lilian Kajihara</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Luis Augusto</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Sergio Ricardo</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Neuza Maria</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bruno Ribeiro</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel Tamaro</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tuba Jorge</div></div></div>
-  <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Vladimir Prof</div></div></div>
-
+  <div class="rowbtns">
+    <div class="rowbtn tap" data-page="leads"><div class="n" style="color:var(--blue)">21</div><div class="t">Leads ›</div></div>
+    <div class="rowbtn tap" data-page="clientes"><div class="n" style="color:var(--green)">11</div><div class="t">Clientes ›</div></div>
+  </div>
 </div>
 
 <div class="foot">Atualizado em 03/08/2026 · Fale com o Cowork: "campanha aí"</div>
+
+<!-- PÁGINA: RITMO -->
+<div class="page" id="pg-ritmo">
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Meta e ritmo</div></div>
+  <div class="card">
+    <div class="lbl">Desdobramento da meta</div>
+    <div class="grid">
+      <div class="mini"><div class="v gold">R$ 8M</div><div class="k">meta do mês</div></div>
+      <div class="mini"><div class="v">16 cotas</div><div class="k">ticket médio 500k</div></div>
+      <div class="mini"><div class="v gold">R$ 2M</div><div class="k">por semana</div></div>
+      <div class="mini"><div class="v gold">4 cotas</div><div class="k">por semana</div></div>
+      <div class="mini"><div class="v">21</div><div class="k">dias úteis restantes</div></div>
+      <div class="mini"><div class="v">R$ 381k</div><div class="k">por dia útil</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="lbl">Situação</div>
+    <div class="chip" style="display:block;line-height:1.7">Fechado: <b>R$ 0</b><br>Propostas em jogo: <b>R$ 3,6M</b> (45%)<br>Ainda descoberto: <b class="orange">R$ 4,4M</b> precisa virar proposta</div>
+  </div>
+</div>
+
+<!-- PÁGINA: PROPOSTAS -->
+<div class="page" id="pg-propostas">
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Propostas em andamento · 3</div></div>
+  <div class="card">
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
+      <div class="info"><div class="nm">Silvio</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 2,5M</div></div>
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
+      <div class="info"><div class="nm">Andressa MS</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 1M</div></div>
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
+      <div class="info"><div class="nm">Guilherme Garcia</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 100k</div></div>
+  </div>
+</div>
+
+<!-- PÁGINA: LEADS -->
+<div class="page" id="pg-leads">
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Leads · 21</div></div>
+  <div class="card">
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Lucas Lopes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Cardoso</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Igor Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Andre Marinho</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eduard Graber</div></div></div>
+    <div id="maisLeads" style="display:none">
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Natan Qualisolda</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Will Gustavo</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ulrich Tennis</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rodrigo Tennis</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Patrícia Martins</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Rodrigues</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ricardo Nascimento</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Dr Andres</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Raul Tennis</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Cintia Rosa</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Phillipe Fujisawa</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Branco</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Guillermo Fernandez</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eiki Piloto</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">João Gaspar</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Alexandre Biazi</div></div></div>
+    </div>
+    <button class="vermais" data-more="maisLeads">ver mais ▼</button>
+  </div>
+</div>
+
+<!-- PÁGINA: CLIENTES -->
+<div class="page" id="pg-clientes">
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Clientes · 11</div></div>
+  <div class="card">
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Família Marçola</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel GPG</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diogo Flores</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lilian Kajihara</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Luis Augusto</div></div></div>
+    <div id="maisClientes" style="display:none">
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Sergio Ricardo</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Neuza Maria</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bruno Ribeiro</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel Tamaro</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tuba Jorge</div></div></div>
+      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Vladimir Prof</div></div></div>
+    </div>
+    <button class="vermais" data-more="maisClientes">ver mais ▼</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  document.addEventListener("click",function(e){
+    var back=e.target.closest("[data-close]");
+    if(back){
+      document.querySelectorAll(".page.open").forEach(function(p){p.classList.remove("open")});
+      document.body.style.overflow="";
+      return;
+    }
+    var more=e.target.closest("[data-more]");
+    if(more){
+      var el=document.getElementById(more.getAttribute("data-more"));
+      var show=el.style.display==="none";
+      el.style.display=show?"block":"none";
+      more.innerText=show?"ver menos ▲":"ver mais ▼";
+      return;
+    }
+    var el=e.target.closest(".tap");
+    if(!el)return;
+    var pg=el.getAttribute("data-page");
+    if(pg){
+      var p=document.getElementById("pg-"+pg);
+      if(p){p.classList.add("open");document.body.style.overflow="hidden";}
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
