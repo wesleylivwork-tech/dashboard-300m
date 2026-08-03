@@ -36,16 +36,7 @@
   .fstep{flex:1;text-align:center;background:var(--card2);border-radius:10px;padding:10px 4px}
   .fstep .n{font-size:20px;font-weight:800}
   .fstep .t{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-  .lead{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
-  .lead:last-child{border-bottom:none}
-  .dot{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}
-  .lead .info{flex:1;min-width:0}
-  .lead .nm{font-size:14px;font-weight:700}
-  .lead .cm{font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.4}
-  .lead .vl{font-size:13px;font-weight:700;white-space:nowrap}
-  .lead.done .nm,.lead.done .vl{text-decoration:line-through;opacity:.45}
-  .lead.done .cm{opacity:.45}
-  .tag{display:inline-block;font-size:9px;padding:2px 7px;border-radius:99px;background:var(--card2);color:var(--mut);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+  .empty{text-align:center;color:var(--mut);font-size:13px;padding:24px 10px;line-height:1.6}
   .bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:10px}
   .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f5d47a)}
   .foot{text-align:center;color:var(--mut);font-size:10.5px;margin-top:18px}
@@ -90,74 +81,18 @@
 <div class="card">
   <div class="lbl">Funil da campanha</div>
   <div class="fun">
-    <div class="fstep"><div class="n">6</div><div class="t">A contatar</div></div>
+    <div class="fstep"><div class="n">0</div><div class="t">A contatar</div></div>
     <div class="fstep"><div class="n" style="color:var(--yellow)">0</div><div class="t">Conversando</div></div>
     <div class="fstep"><div class="n" style="color:var(--orange)">0</div><div class="t">Proposta</div></div>
     <div class="fstep"><div class="n" style="color:var(--green)">0</div><div class="t">Fechado</div></div>
   </div>
-  <div class="kv" style="margin-top:12px">Pipeline mapeado: <b>R$ 6,26M</b> em crédito alvo (78% da meta). <span class="orange">Precisa gerar mais lead pra cobrir os 8M.</span></div>
-  <div class="bar"><i style="width:78%"></i></div>
+  <div class="kv" style="margin-top:12px">Pipeline mapeado: <b>R$ 0</b> (0% da meta)</div>
+  <div class="bar"><i style="width:0%"></i></div>
 </div>
 
 <div class="card">
   <div class="lbl">Lista da campanha</div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">Giovanna</div>
-      <div class="cm">Consórcio Porto p/ investimento, mesma tese do Luiggi</div>
-      <span class="tag">Investimento · A contatar</span></div>
-    <div class="vl">R$ 3,36M</div>
-  </div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">Luiggi</div>
-      <div class="cm">Carta p/ investimento (venda/uso). Proposta já apresentada</div>
-      <span class="tag">Investimento · A contatar</span></div>
-    <div class="vl">R$ 2,1M</div>
-  </div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">Tuba Jorge</div>
-      <div class="cm">Lead em 1ª Reunião, sem andamento desde jun</div>
-      <span class="tag">Imóvel · A contatar</span></div>
-    <div class="vl">R$ 500k</div>
-  </div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">Bruno Ribeiro</div>
-      <div class="cm">Intenção de consórcio imóvel ~300k (a confirmar)</div>
-      <span class="tag">Imóvel · A contatar</span></div>
-    <div class="vl">R$ 300k</div>
-  </div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">João Gaspar</div>
-      <div class="cm">Consórcio p/ holding familiar. Definir crédito alvo</div>
-      <span class="tag">Investimento · A contatar</span></div>
-    <div class="vl">—</div>
-  </div>
-
-  <div class="lead">
-    <div class="dot" style="background:var(--mut)"></div>
-    <div class="info"><div class="nm">Ricardo Manfrinato</div>
-      <div class="cm">Tese: dividendos R$ 2,7-2,9k/mês como parcela. Definir crédito</div>
-      <span class="tag">Investimento · A contatar</span></div>
-    <div class="vl">—</div>
-  </div>
-
-  <div class="lead done">
-    <div class="dot" style="background:var(--red)"></div>
-    <div class="info"><div class="nm">Silvio</div>
-      <div class="cm">Construção ~2M. Declinou 31/07 (2 processos jurídicos). Reabordar se resolver</div>
-      <span class="tag">Imóvel · Descartado</span></div>
-    <div class="vl">R$ 2M</div>
-  </div>
-
+  <div class="empty">Lista vazia.<br>Fale os nomes pro Cowork: "add fulano, 500k imóvel".</div>
 </div>
 
 <div class="foot">Atualizado em 03/08/2026 · Fale com o Cowork: "campanha aí"</div>
