@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campanha Consórcio · Ago/26</title>
+<style>
+  :root{
+    --bg:#0b0e14; --card:#131824; --card2:#1a2132; --line:#232c42;
+    --txt:#e8ecf4; --mut:#8b95ab; --gold:#e8b34b; --green:#3ddc84;
+    --yellow:#f5c542; --orange:#f28c3b; --red:#e05d5d; --blue:#5b8def; --purple:#a06ee8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;padding:20px 16px 40px;max-width:520px;margin:0 auto}
+  .head{text-align:center;margin-bottom:20px}
+  .head h1{font-size:20px;font-weight:800;letter-spacing:.5px}
+  .head .sub{color:var(--mut);font-size:12px;margin-top:4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+  .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:12px;font-weight:700}
+  .ringwrap{display:flex;align-items:center;gap:18px}
+  .ring{position:relative;width:130px;height:130px;flex-shrink:0}
+  .ring svg{transform:rotate(-90deg)}
+  .ring .pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring .pct b{font-size:26px;color:var(--gold)}
+  .ring .pct span{font-size:10px;color:var(--mut)}
+  .bignum{font-size:22px;font-weight:800}
+  .bignum small{font-size:13px;color:var(--mut);font-weight:500}
+  .kv{margin-top:8px;font-size:13px;color:var(--mut)}
+  .kv b{color:var(--txt)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mini{background:var(--card2);border-radius:12px;padding:12px}
+  .mini .v{font-size:18px;font-weight:800}
+  .mini .k{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+  .gold{color:var(--gold)} .green{color:var(--green)} .red{color:var(--red)} .orange{color:var(--orange)}
+  .fun{display:flex;gap:6px}
+  .fstep{flex:1;text-align:center;background:var(--card2);border-radius:10px;padding:10px 4px}
+  .fstep .n{font-size:20px;font-weight:800}
+  .fstep .t{font-size:9px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+  .lead{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .lead:last-child{border-bottom:none}
+  .dot{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}
+  .lead .info{flex:1;min-width:0}
+  .lead .nm{font-size:14px;font-weight:700}
+  .lead .cm{font-size:11.5px;color:var(--mut);margin-top:2px;line-height:1.4}
+  .lead .vl{font-size:13px;font-weight:700;white-space:nowrap}
+  .lead.done .nm,.lead.done .vl{text-decoration:line-through;opacity:.45}
+  .lead.done .cm{opacity:.45}
+  .tag{display:inline-block;font-size:9px;padding:2px 7px;border-radius:99px;background:var(--card2);color:var(--mut);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+  .bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:10px}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f5d47a)}
+  .foot{text-align:center;color:var(--mut);font-size:10.5px;margin-top:18px}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>🎯 CAMPANHA CONSÓRCIO</h1>
+  <div class="sub">Agosto 2026 · Meta pessoal Wesley</div>
+</div>
+
+<div class="card">
+  <div class="lbl">Progresso da meta</div>
+  <div class="ringwrap">
+    <div class="ring">
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="56" fill="none" stroke="#232c42" stroke-width="12"/>
+        <circle cx="65" cy="65" r="56" fill="none" stroke="#e8b34b" stroke-width="12"
+          stroke-linecap="round" stroke-dasharray="351.9" stroke-dashoffset="351.9"/>
+      </svg>
+      <div class="pct"><b>0%</b><span>da meta</span></div>
+    </div>
+    <div>
+      <div class="bignum">R$ 0 <small>/ R$ 8M</small></div>
+      <div class="kv">Cotas fechadas: <b>0 / 16</b></div>
+      <div class="kv">Falta: <b>R$ 8.000.000</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="lbl">Ritmo necessário</div>
+  <div class="grid">
+    <div class="mini"><div class="v gold">R$ 2M</div><div class="k">por semana</div></div>
+    <div class="mini"><div class="v gold">4 cotas</div><div class="k">por semana (500k)</div></div>
+    <div class="mini"><div class="v">21</div><div class="k">dias úteis restantes</div></div>
+    <div class="mini"><div class="v">R$ 381k</div><div class="k">por dia útil</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="lbl">Funil da campanha</div>
+  <div class="fun">
+    <div class="fstep"><div class="n">6</div><div class="t">A contatar</div></div>
+    <div class="fstep"><div class="n" style="color:var(--yellow)">0</div><div class="t">Conversando</div></div>
+    <div class="fstep"><div class="n" style="color:var(--orange)">0</div><div class="t">Proposta</div></div>
+    <div class="fstep"><div class="n" style="color:var(--green)">0</div><div class="t">Fechado</div></div>
+  </div>
+  <div class="kv" style="margin-top:12px">Pipeline mapeado: <b>R$ 6,26M</b> em crédito alvo (78% da meta). <span class="orange">Precisa gerar mais lead pra cobrir os 8M.</span></div>
+  <div class="bar"><i style="width:78%"></i></div>
+</div>
+
+<div class="card">
+  <div class="lbl">Lista da campanha</div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">Giovanna</div>
+      <div class="cm">Consórcio Porto p/ investimento, mesma tese do Luiggi</div>
+      <span class="tag">Investimento · A contatar</span></div>
+    <div class="vl">R$ 3,36M</div>
+  </div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">Luiggi</div>
+      <div class="cm">Carta p/ investimento (venda/uso). Proposta já apresentada</div>
+      <span class="tag">Investimento · A contatar</span></div>
+    <div class="vl">R$ 2,1M</div>
+  </div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">Tuba Jorge</div>
+      <div class="cm">Lead em 1ª Reunião, sem andamento desde jun</div>
+      <span class="tag">Imóvel · A contatar</span></div>
+    <div class="vl">R$ 500k</div>
+  </div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">Bruno Ribeiro</div>
+      <div class="cm">Intenção de consórcio imóvel ~300k (a confirmar)</div>
+      <span class="tag">Imóvel · A contatar</span></div>
+    <div class="vl">R$ 300k</div>
+  </div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">João Gaspar</div>
+      <div class="cm">Consórcio p/ holding familiar. Definir crédito alvo</div>
+      <span class="tag">Investimento · A contatar</span></div>
+    <div class="vl">—</div>
+  </div>
+
+  <div class="lead">
+    <div class="dot" style="background:var(--mut)"></div>
+    <div class="info"><div class="nm">Ricardo Manfrinato</div>
+      <div class="cm">Tese: dividendos R$ 2,7-2,9k/mês como parcela. Definir crédito</div>
+      <span class="tag">Investimento · A contatar</span></div>
+    <div class="vl">—</div>
+  </div>
+
+  <div class="lead done">
+    <div class="dot" style="background:var(--red)"></div>
+    <div class="info"><div class="nm">Silvio</div>
+      <div class="cm">Construção ~2M. Declinou 31/07 (2 processos jurídicos). Reabordar se resolver</div>
+      <span class="tag">Imóvel · Descartado</span></div>
+    <div class="vl">R$ 2M</div>
+  </div>
+
+</div>
+
+<div class="foot">Atualizado em 03/08/2026 · Fale com o Cowork: "campanha aí"</div>
+
+</body>
+</html>
