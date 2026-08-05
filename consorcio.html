@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Campanha Consórcio · Ago/26</title>
 <style>
-  :root{
-    --bg:#0b0e14; --card:#131824; --card2:#1a2132; --line:#232c42;
-    --txt:#e8ecf4; --mut:#8b95ab; --gold:#e8b34b; --green:#3ddc84;
-    --yellow:#f5c542; --orange:#f28c3b; --red:#e05d5d; --blue:#5b8def;
-  }
+  :root{--bg:#0b0e14;--card:#131824;--card2:#1a2132;--line:#232c42;--txt:#e8ecf4;--mut:#8b95ab;--gold:#e8b34b;--green:#3ddc84;--yellow:#f5c542;--orange:#f28c3b;--red:#e05d5d;--blue:#5b8def}
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,sans-serif;padding:20px 16px 40px;max-width:520px;margin:0 auto}
   .head{text-align:center;margin-bottom:20px}
@@ -46,19 +42,16 @@
   .dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
   .lead .info{flex:1;min-width:0}
   .lead .nm{font-size:14px;font-weight:700}
-  .lead .cm{font-size:11.5px;color:var(--mut);margin-top:1px;line-height:1.35}
   .lead .vl{font-size:13px;font-weight:700;white-space:nowrap;color:var(--gold)}
-  .lead.done .nm,.lead.done .vl{text-decoration:line-through;opacity:.5}
-  .bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:10px}
-  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f5d47a)}
   .vermais{display:block;width:100%;text-align:center;background:var(--card2);border:none;color:var(--mut);font-size:12px;font-weight:700;padding:10px;border-radius:10px;margin-top:10px;cursor:pointer;font-family:inherit}
   .vermais:active{opacity:.7}
   .rowbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
   .rowbtn{background:var(--card2);border-radius:12px;padding:13px 12px;text-align:center}
   .rowbtn .n{font-size:17px;font-weight:800}
   .rowbtn .t{font-size:10px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+  .bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-top:10px}
+  .bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--gold),#f5d47a)}
   .foot{text-align:center;color:var(--mut);font-size:10.5px;margin-top:18px}
-  /* páginas deslizantes */
   .page{position:fixed;inset:0;background:var(--bg);z-index:200;overflow-y:auto;padding:16px 16px 40px;transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);visibility:hidden;max-width:520px;margin:0 auto}
   .page.open{transform:translateX(0);visibility:visible}
   .page-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
@@ -73,7 +66,6 @@
   <div class="sub">Agosto 2026 · Meta pessoal Wesley</div>
 </div>
 
-<!-- HERO -->
 <div class="card hero tap" data-page="ritmo">
   <span class="arr">›</span>
   <div class="lbl">Progresso da meta</div>
@@ -81,8 +73,7 @@
     <div class="ring">
       <svg width="110" height="110" viewBox="0 0 110 110">
         <circle cx="55" cy="55" r="47" fill="none" stroke="#232c42" stroke-width="10"/>
-        <circle cx="55" cy="55" r="47" fill="none" stroke="#e8b34b" stroke-width="10"
-          stroke-linecap="round" stroke-dasharray="295.3" stroke-dashoffset="295.3"/>
+        <circle cx="55" cy="55" r="47" fill="none" stroke="#e8b34b" stroke-width="10" stroke-linecap="round" stroke-dasharray="295.3" stroke-dashoffset="295.3"/>
       </svg>
       <div class="pct"><b>0%</b><span>da meta</span></div>
     </div>
@@ -96,12 +87,11 @@
   </div>
 </div>
 
-<!-- FUNIL -->
 <div class="card tap" data-page="propostas">
   <span class="arr">›</span>
-  <div class="lbl">Funil · 35 nomes</div>
+  <div class="lbl">Funil · 166 nomes</div>
   <div class="fun">
-    <div class="fstep"><div class="n">32</div><div class="t">A contatar</div></div>
+    <div class="fstep"><div class="n">163</div><div class="t">A contatar</div></div>
     <div class="fstep"><div class="n" style="color:var(--yellow)">0</div><div class="t">Conversando</div></div>
     <div class="fstep"><div class="n" style="color:var(--orange)">3</div><div class="t">Proposta</div></div>
     <div class="fstep"><div class="n" style="color:var(--green)">0</div><div class="t">Fechado</div></div>
@@ -110,25 +100,19 @@
   <div class="bar"><i style="width:45%"></i></div>
 </div>
 
-<!-- PROPOSTAS (resumo, 3 itens) -->
 <div class="card">
   <div class="lbl">Propostas em andamento</div>
-  <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-    <div class="info"><div class="nm">Silvio</div></div><div class="vl">R$ 2,5M</div></div>
-  <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-    <div class="info"><div class="nm">Andressa MS</div></div><div class="vl">R$ 1M</div></div>
-  <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-    <div class="info"><div class="nm">Guilherme Garcia</div></div><div class="vl">R$ 100k</div></div>
-
+  <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Silvio</div></div><div class="vl">R$ 2,5M</div></div>
+  <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Andressa MS</div></div><div class="vl">R$ 1M</div></div>
+  <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Guilherme Garcia</div></div><div class="vl">R$ 100k</div></div>
   <div class="rowbtns">
-    <div class="rowbtn tap" data-page="leads"><div class="n" style="color:var(--blue)">21</div><div class="t">Leads ›</div></div>
-    <div class="rowbtn tap" data-page="clientes"><div class="n" style="color:var(--green)">11</div><div class="t">Clientes ›</div></div>
+    <div class="rowbtn tap" data-page="leads"><div class="n" style="color:var(--blue)">63</div><div class="t">Leads ›</div></div>
+    <div class="rowbtn tap" data-page="clientes"><div class="n" style="color:var(--green)">100</div><div class="t">Clientes ›</div></div>
   </div>
 </div>
 
-<div class="foot">Atualizado em 03/08/2026 · Fale com o Cowork: "campanha aí"</div>
+<div class="foot">Atualizado em 05/08/2026 · Fale com o Cowork: "campanha aí"</div>
 
-<!-- PÁGINA: RITMO -->
 <div class="page" id="pg-ritmo">
   <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Meta e ritmo</div></div>
   <div class="card">
@@ -138,8 +122,8 @@
       <div class="mini"><div class="v">16 cotas</div><div class="k">ticket médio 500k</div></div>
       <div class="mini"><div class="v gold">R$ 2M</div><div class="k">por semana</div></div>
       <div class="mini"><div class="v gold">4 cotas</div><div class="k">por semana</div></div>
-      <div class="mini"><div class="v">21</div><div class="k">dias úteis restantes</div></div>
-      <div class="mini"><div class="v">R$ 381k</div><div class="k">por dia útil</div></div>
+      <div class="mini"><div class="v">19</div><div class="k">dias úteis restantes</div></div>
+      <div class="mini"><div class="v">R$ 421k</div><div class="k">por dia útil</div></div>
     </div>
   </div>
   <div class="card">
@@ -148,66 +132,191 @@
   </div>
 </div>
 
-<!-- PÁGINA: PROPOSTAS -->
 <div class="page" id="pg-propostas">
   <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Propostas em andamento · 3</div></div>
   <div class="card">
-    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-      <div class="info"><div class="nm">Silvio</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 2,5M</div></div>
-    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-      <div class="info"><div class="nm">Andressa MS</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 1M</div></div>
-    <div class="lead"><div class="dot" style="background:var(--orange)"></div>
-      <div class="info"><div class="nm">Guilherme Garcia</div><div class="cm">Proposta apresentada</div></div><div class="vl">R$ 100k</div></div>
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Silvio</div></div><div class="vl">R$ 2,5M</div></div>
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Andressa MS</div></div><div class="vl">R$ 1M</div></div>
+    <div class="lead"><div class="dot" style="background:var(--orange)"></div><div class="info"><div class="nm">Guilherme Garcia</div></div><div class="vl">R$ 100k</div></div>
   </div>
 </div>
 
-<!-- PÁGINA: LEADS -->
 <div class="page" id="pg-leads">
-  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Leads · 21</div></div>
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Leads · 63</div></div>
   <div class="card">
-    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Lucas Lopes</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Cardoso</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Igor Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Adriana Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Alexandre (filho do Pedro Paulo)</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Alexandre Biazi</div></div></div>
     <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Andre Marinho</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eduard Graber</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Andrea Stefanelli</div></div></div>
     <div id="maisLeads" style="display:none">
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Natan Qualisolda</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Will Gustavo</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ulrich Tennis</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rodrigo Tennis</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Patrícia Martins</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Rodrigues</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ricardo Nascimento</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Dr Andres</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Raul Tennis</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Cintia Rosa</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Phillipe Fujisawa</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Branco</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Guillermo Fernandez</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eiki Piloto</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">João Gaspar</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Alexandre Biazi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Antonio Junior</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Arnaldo Tanaka</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Caique Albrecht</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Carla Schmitz</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Carlos Junior</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Cintia Rosa</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Claudio Santos</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Daniel Sidney</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Dr Andres</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eduard Graber</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eduardo Ambiel</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Eiki Piloto</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Evandro São Pedro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Fabio Barreto</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Fabio Nardon</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Fabio Veiga</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Felipe Fernandes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Guilherme Abdulklech</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Guillermo Fernandez</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Gustavo Malaquias</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Iara Toma</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Igor Mesquita</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Igor Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Joshua Brum</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">João Gaspar</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">João Narezi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Kareen Ratton Marjorie</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Lucas Lopes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Luiz Aranha</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Luiz Henrique</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Luiz Henrique (Balila)</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Luiz Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcio Sato</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Branco</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Bueno</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Cardoso</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Marcos Spighel</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Natan Qualisolda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Patrícia Martins</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Paulo Rosito</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Pedro Paulo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Phillipe Fujisawa</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rafael Olmedo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rafael Peres</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Raul Rovesta</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Raul Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ricardo Kuada</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ricardo Nascimento</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rodrigo Koyama</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Rodrigo Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Tamires Priscila</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Andrade</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Navarro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Thiago Rodrigues</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Toco Brasa</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Ulrich Tennis</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Vinicius Wolf</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--mut)"></div><div class="info"><div class="nm">Will Gustavo</div></div></div>
     </div>
     <button class="vermais" data-more="maisLeads">ver mais ▼</button>
   </div>
 </div>
 
-<!-- PÁGINA: CLIENTES -->
 <div class="page" id="pg-clientes">
-  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Clientes · 11</div></div>
+  <div class="page-top"><button class="page-back" data-close>‹ Voltar</button><div class="page-title">Clientes · 100</div></div>
   <div class="card">
-    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Família Marçola</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel GPG</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diogo Flores</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lilian Kajihara</div></div></div>
-    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Luis Augusto</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Abner Teixeira da Silva Junior</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Adryane de Marchi Areias</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Agnaldo Correia do Nascimento</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Alan Felipe Cecchin</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Aline Cristine Queiroz</div></div></div>
     <div id="maisClientes" style="display:none">
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Sergio Ricardo</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Neuza Maria</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bruno Ribeiro</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel Tamaro</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tuba Jorge</div></div></div>
-      <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Vladimir Prof</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Ana Claudia Marques Cardoso</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Ana Flavia Rodrigues Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Andre Luiz Souza Alfonso</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Andre de Oliveira Larangeira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Antonino Veras Nogueira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Arnon Thalenberg</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Beatriz Feltrin de Souza Manfrinato</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bianca Feltrin de Souza Manfrinato</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Big Box Comercio de Artigos Plasticos Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bruno Ribeiro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Bruno Yamaoka Poppi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Camila Cardoso Alves</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Carla Patricia Nunes dos Santos</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Carolina Amaral Franco da Costa</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Cinthia Mourao de Albuquerque</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Claire Tomasetti</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Clayton Miquelin</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Davi Maciel</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Denise Cristina dos Santos Escada</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diego Oliveira Pinto</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diogo Campos Gama Rocha</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Diogo Flores</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Douglas Carvalho Alves</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Edgar Fernandes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Eduardo Sabroso Baptista</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Elisabete da Silva Vieira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Família Marçola</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Faseum Comunicacao Visual Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Fatima Aparecida Gianotto Mocci</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Felipe Silva Scalezi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel GPG</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gabriel Tamaro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Genesio A Mendes & Cia Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gisela Astrid Bello Gomes Langowski</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gisele Cugnier Barbosa Goncalves</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Gpg Abrasivos Comercio Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Guilherme Garutti Rodrigues</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Ignacio Enrique Villaverde</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Igor Garcia Takeda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Jacques Joseph Abram</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Jessica de Assis Almendro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Joao Genaro de Aguiar</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Jorge Edmundo Mora</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Julia Carolina Barretto Sidi Querino de Carvalho</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">K L Wong - Me</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Karla Mickaela Araujo dos Santos</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Laercio Carlos do Nascimento</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lan Networks Distribuidora Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Leandro Marcelo Lucas</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Leonardo Andrade Sousa de Souza</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Leonardo Chaves de Araujo Duarte</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Leticia Orsi Gobbi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lilian Kajihara</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lilian Miki Kajihara PJ</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Liliana Kulb Abram</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lk Wong & Acessorios Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lucas Florentino Teixeira de Castro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Lucas Siqueira Laranjeira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Luigi Barreto Zanata Valforte</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Luis Augusto</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Maicon da Silva Galhardi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Mara Lucia Vieira Lobo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Marcela Giraldes Simoes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Maria Julia de Oliveira Coelho Montenegro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Mariana Vitoria Rodrigues da Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Matheus Spedo Spagnuolo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Michel Bertin Ferreira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Michele Coelho Montenegro</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Neuza Maria</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Octavio Bentes de Franca e Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Pamela Bertti</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Phillipe Rios Pimentel</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Quality Mooca Comercio de Artigos Plasticos Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Race Abrasivos Industria e Comercio Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Rafael Carlos Sabiao Aranha</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Rafael Henrique Corbacho Pinna Formoso</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Regina Vaghetti</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Ricardo Manfrinato</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Ricardo Santana Lopes</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Richarlyston Brandt Pereira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Robson Parreiras Pereira de Oliveira</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Romilda Rodrigues da Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Rubens Dias Melo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Sergio Ricardo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Silvia Fasolo</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Sk Wong Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Suria de Borba Attianesi</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tech Filter Tratamento e Filtracao Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tecnodidattica do Brasil Ltda</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Tuba Jorge</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Vanessa Rocha Goncalves</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Vladimir Prof</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Wanderley Carlos do Nascimento</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Wesley Alves da Silva</div></div></div>
+    <div class="lead"><div class="dot" style="background:var(--blue)"></div><div class="info"><div class="nm">Wesley Luan dos Santos Silva</div></div></div>
     </div>
     <button class="vermais" data-more="maisClientes">ver mais ▼</button>
   </div>
@@ -217,26 +326,13 @@
 (function(){
   document.addEventListener("click",function(e){
     var back=e.target.closest("[data-close]");
-    if(back){
-      document.querySelectorAll(".page.open").forEach(function(p){p.classList.remove("open")});
-      document.body.style.overflow="";
-      return;
-    }
+    if(back){document.querySelectorAll(".page.open").forEach(function(p){p.classList.remove("open")});document.body.style.overflow="";return;}
     var more=e.target.closest("[data-more]");
-    if(more){
-      var el=document.getElementById(more.getAttribute("data-more"));
-      var show=el.style.display==="none";
-      el.style.display=show?"block":"none";
-      more.innerText=show?"ver menos ▲":"ver mais ▼";
-      return;
-    }
+    if(more){var el=document.getElementById(more.getAttribute("data-more"));var show=el.style.display==="none";el.style.display=show?"block":"none";more.innerText=show?"ver menos ▲":"ver mais ▼";return;}
     var el=e.target.closest(".tap");
     if(!el)return;
     var pg=el.getAttribute("data-page");
-    if(pg){
-      var p=document.getElementById("pg-"+pg);
-      if(p){p.classList.add("open");document.body.style.overflow="hidden";}
-    }
+    if(pg){var p=document.getElementById("pg-"+pg);if(p){p.classList.add("open");document.body.style.overflow="hidden";}}
   });
 })();
 </script>
